@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<htlm>
+    
+    <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .he{color: yellowgreen;}
+        #first{color: red;}
+        span{background-color: cornflowerblue;}
+        #div{
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: darkseagreen;
+        }
+        #span{
+            text-align: center;
+        }
+        #night_day{
+            float: right;
+        }
+    </style>
+
+    <script>
+        function nightdayhandler(){
+        if (document.querySelector('#night_day').value==='night')
+            {document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+            document.querySelector('#night_day').value='day';
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i<alist.length){
+                alist[i].style.color = 'powderblue';
+                i=i+1;
+            }}
+        else 
+            {document.querySelector('body').style.backgroundColor='white' ;
+            document.querySelector('body').style.color='black';
+            document.querySelector('#night_day').value='night';
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i<alist.length){
+                alist[i].style.color = 'blue';
+                i=i+1;
+            }}
+        }
+    </script>
+
+    </head>
+
+    <body >
+        <h1 style="background-color: skyblue ;color : bisque;">javascript</h1>
+        <script>
+            document.write('hello');
+            document.write(1+1);
+        </script>
+        <h1>html</h1>
+        <span id="first" class="he" style="font-weight: bold;">hello</span> world <span class="he" style="font-weight: bold;">hello</span>sdkjafnlkjslkfewtuodnvasdlrwfk klasdliu qnaslskljsldkf<span class="he" style="font-weight: bold;">hello</span> , ksialk  lslsiel l si <span class="he" style="font-weight: bold;">hello</span>ihelfksljf 
+        1+1<br>
+
+        <input type="button" value="hi" onclick="alert('hi')">
+        <input type="text" onchange="alert('changed')">
+        <input type="text" onkeydown="alert('key down')">
+        
+        <a href="hello" target="_blank" title="dd">ddss</a>
+
+        <br>
+        <input type="button" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black' ;
+        document.querySelector('body').style.color='white'
+        ">
+        <input type="button" value="day"onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black'">
+    <br>
+    <div id= 'div'>
+    <span id="span"><h1>토글 버튼(조건문 활용)</h1></span>
+        <input id="night_day" type="button" value="night" onclick=
+        nightdayhandler()>
+        </div>
+    <br><br>
+    <input type="button" value="night" onclick=
+        "var target = document.querySelector('body');
+        if (this.value==='night')
+            { target.style.backgroundColor='black' ;
+            target.style.color='white';
+            this.value='day';}
+        else 
+            {target.style.backgroundColor='white' ;
+            target.style.color='black'
+            this.value='night';}
+        ">
+
+        <h1>Array</h1>
+        <h2>syntax, add</h2>
+        <script>
+            var coworkers = ["first", "second"];
+            coworkers.push('third');
+            coworkers.push('fourth');
+            
+        </script>
+
+        <h2>get, count</h2>
+        <script>
+            document.write(coworkers[0]);
+            document.write(coworkers[1]);
+            document.write(coworkers.length);
+
+        </script>
+        <h1>Loop</h1>
+        <ul>
+        <script>
+            document.write('<li>1</li>')
+            var i=1;
+            while(i<3) {
+            document.write('<li>2</li>')
+            document.write('<li>3</li>')
+            i = i+1;
+            }
+            document.write('<li>4</li>')
+        </script>
+        </ul>
+        <h1>Array+Loop</h1>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <script>
+            var number=['1','2','3','4','5','6'];
+            var i = 0;
+            while(i< number.length){            
+            document.write('<li><a href="http://???.com/'+number[i]+'">'+number[i]+'</a></li>');
+            i =  i + 1;
+            }
+        </script>
+
+        <h1>function</h1>
+        <ul>
+            <script>
+                function two(){
+                    document.write('<li>2-1</li>');
+                    document.write('<li>2-2</li>');
+                    }
+                document.write('<li>1</li>');
+                two();
+                document.write('<li>3</li>');
+                two();
+            </script>
+        </ul>
+        <h1>parameter&argument</h1>
+        <script>
+            function oneplus(){
+                document.write(1+1+'<br>');
+            }
+            function sum(left, right){
+                document.write(left+right+'<br>');
+            }
+            function sumcolor(left, right){
+                document.write('<div style="color:red">' +left+right+'</div><br>');
+            }
+            oneplus();
+            sum(2,3);
+            sumcolor(3,5);
+            sum(3,4);
+            
+        </script>
+
+        <h2> return </h2>
+        <script>
+            function sum2(left, right){
+                return left+right;
+
+            }
+            document.write(sum2(2,3)+'<br>');
+            document.write('<div style="color:red">'+sum2(2,3)+'</div>');
+        </script>
+
+        <h1>object</h1>
+        <h2>create</h2>
+        <script>
+            var coworkers = {
+                "programmer":"egoing", 
+                "designer":"leezche"
+            };
+            document.write('programmer:' +coworkers.programmer+"<br>");
+            document.write('designer:' +coworkers.designer+"<br>");
+            coworkers.bookkeeper = "duru";
+            document.write("bookkeeper:"+coworkers.bookkeeper+"<br>")
+            coworkers["data scientist"] = "taeho";
+            document.write("data scientist:"+coworkers["data scientist"]+"<br>");
+            </script>
+            <h2>iterate</h2>
+            <script>
+                for(var key in coworkers){
+                    document.write(key+"<br>");
+                    
+                    document.write(coworkers[key]+"<br>");
+
+                    document.write(key+':'+coworkers[key]+'<br><br>');
+                    
+                }
+            </script>
+
+            <h2>property & method</h2>
+            <script>
+                coworkers.showAll = function(){
+                    for(var key in coworkers){
+                        document.write(key+':'+this[key]+'<br>');
+                    }
+                }
+                coworkers.showAll();
+            </script>
+    </body>
+</htlm>
